@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  # Flask Service
+  server:
+    container_name: tandem-backend
+    build:
+      context: ./server
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./server:/app/server
+    command:
+      [
+        "gunicorn",
+        "wsgi:app",
+        "--workers=2",
+        "--bind=0.0.0.0:5001",
+        "--reload",
+        "--capture-output",
+      ]
+    environment:
+      - ENABLE_SERVER_DEBUG=true
+      - PYTHONUNBUFFERED=1
+
+  # React Service
+  client:
+    container_name: tandem-frontend
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app/client
+    command: ["npm", "start"]
+    environment:
+      - WATCHPACK_POLLING=true
+      - NODE_ENV=development

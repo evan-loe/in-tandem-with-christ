@@ -1,0 +1,21 @@
+{
+  "parking_spots": {
+    "a-1": { "front": null, "rear": null },
+    "a-2": { "front": null, "rear": null },
+    "a-3": { "front": null, "rear": null },
+    "a-4": { "front": null, "rear": null },
+    "a-5": { "front": null, "rear": null },
+    "a-6": { "front": null, "rear": null },
+    "a-7": { "front": null, "rear": null },
+    "a-8": { "front": null, "rear": null },
+    "a-9": { "front": null, "rear": null },
+    "c-4": {
+      "front": {
+        "name": "John",
+        "phoneNumber": "416-889-0098",
+        "departureTime": "12:44 pm"
+      },
+      "rear": null
+    }
+  }
+}
